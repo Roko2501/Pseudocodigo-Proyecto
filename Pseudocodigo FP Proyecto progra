@@ -1,0 +1,608 @@
+Fin SubProceso
+
+SubProceso <- funcionAlgebra()
+	Definir m, n, i, j, rtx, gtx, menuAlg Como Entero
+    
+    Escribir "Bienvenido al apartado de álgebra"
+    Escribir "Te puedo apoyar en los siguientes temas"
+    Escribir "1- Matrices"
+    Escribir "2- Números complejos C"
+    Escribir "**Presiona cualquier número para salir de este apartado"
+    Leer menuAlg
+	
+    Segun menuAlg Hacer
+        Caso 1:
+            Escribir "Apartado que te escribe una matriz"
+            Escribir "¿De cuántas columnas es la matriz?"
+            Leer m
+            Escribir "¿De cuántas filas es la matriz?"
+            Leer n
+			
+            Matriz matriz
+            matriz <- CrearMatriz(m, n)
+			
+            Para i <- 0 Hasta n Hacer
+                Para j <- 0 Hasta m Hacer
+                    Escribir "Ingrese el número de la columna", j, " y fila", i
+                    Leer matriz[j][i]
+                Fin Para
+            Fin Para
+			
+            Para rtx <- 0 Hasta n Hacer
+                Para gtx <- 0 Hasta m Hacer
+                    Escribir matriz[gtx][rtx], "\t"
+                Fin Para
+                Escribir "\n"
+            Fin Para
+			
+            LiberarMatriz(matriz)
+        Fin Caso
+		
+	Caso 2:
+		Escribir "Ingrese el valor de r"
+		Definir radio, angulo, x, y Como Real
+		Leer radio
+		Escribir "Ingrese el valor del ángulo"
+		Leer angulo
+		angulo <- angulo * (3.141592653597 / 180)
+		x <- cos(angulo)
+		y <- sin(angulo)
+		x <- radio * x
+		y <- radio * y
+		Escribir "La forma rectangular es (", x, ",", y, ")"
+	Fin Caso
+	
+De Otro Modo:
+	Escribir "\n"
+Fin Segun
+Fin SubProceso
+
+SubProceso funcionCyG()
+    Definir opcion, menuCyG Como Entero
+    Definir radio, lado, altura, base, resultado Como Real
+    Constante PI <- 3.14159265
+	
+    Escribir "Elija la opción en la que le pueda ayudar"
+    Escribir "1. Volúmenes"
+    Escribir "2. Áreas"
+    Leer menuCyG
+	
+    Segun menuCyG Hacer
+        Caso 1:
+            // Volúmenes
+            Escribir "Elija la figura para calcular el volumen:"
+            Escribir "1. Esfera"
+            Escribir "2. Cubo"
+            Escribir "3. Cilindro"
+            Escribir "4. Cono"
+            Escribir "Presiona cualquier número para salir"
+            Leer opcion
+			
+            Segun opcion Hacer
+                Caso 1: // Esfera
+                    Escribir "Ingrese el radio de la esfera: "
+                    Leer radio
+                    resultado <- (4.0 / 3.0) * PI * (radio * radio * radio)
+                    Escribir "El volumen de la esfera es: ", resultado
+                Fin Caso
+				
+			Caso 2: // Cubo
+				Escribir "Ingrese el lado del cubo: "
+				Leer lado
+				resultado <- lado * lado * lado
+				Escribir "El volumen del cubo es: ", resultado
+			Fin Caso
+			
+		Caso 3: // Cilindro
+			Escribir "Ingrese el radio del cilindro: "
+			Leer radio
+			Escribir "Ingrese la altura del cilindro: "
+			Leer altura
+			resultado <- PI * (radio * radio) * altura
+			Escribir "El volumen del cilindro es: ", resultado
+		Fin Caso
+		
+	Caso 4: // Cono
+		Escribir "Ingrese el radio del cono: "
+		Leer radio
+		Escribir "Ingrese la altura del cono: "
+		Leer altura
+		resultado <- (1.0 / 3.0) * PI * (radio * radio) * altura
+		Escribir "El volumen del cono es: ", resultado
+	Fin Caso
+	
+De Otro Modo:
+	Escribir "\n"
+Fin Segun
+Fin Caso
+
+Caso 2:
+	// Áreas
+	Escribir "Elija la figura para calcular el área:"
+	Escribir "1. Círculo"
+	Escribir "2. Cuadrado"
+	Escribir "3. Rectángulo"
+	Escribir "4. Triángulo"
+	Escribir "Presiona cualquier número para salir"
+	Leer opcion
+	
+	Segun opcion Hacer
+		Caso 1: // Círculo
+			Escribir "Ingrese el radio del círculo: "
+			Leer radio
+			resultado <- PI * (radio * radio)
+			Escribir "El área del círculo es: ", resultado
+		Fin Caso
+		
+	Caso 2: // Cuadrado
+		Escribir "Ingrese el lado del cuadrado: "
+		Leer lado
+		resultado <- lado * lado
+		Escribir "El área del cuadrado es: ", resultado
+	Fin Caso
+	
+Caso 3: // Rectángulo
+	Escribir "Ingrese la base del rectángulo: "
+	Leer base
+	Escribir "Ingrese la altura del rectángulo: "
+	Leer altura
+	resultado <- base * altura
+	Escribir "El área del rectángulo es: ", resultado
+Fin Caso
+
+Caso 4: // Triángulo
+	Escribir "Ingrese la base del triángulo: "
+	Leer base
+	Escribir "Ingrese la altura del triángulo: "
+	Leer altura
+	resultado <- (1.0 / 2.0) * (base * altura)
+	Escribir "El área del triángulo es: ", resultado
+Fin Caso
+
+De Otro Modo:
+Escribir "\n"
+Fin Segun
+Fin Caso
+
+De Otro Modo:
+	Escribir "\n"
+Fin Segun
+Fin SubProceso
+
+SubProceso funcionFisica()
+	Definir menuFis Como Entero
+    Definir vd1, vi1 Como Caracter
+    Definir x1, y1, x2, y2, pendiente, pvalor, x3 Como Real
+	
+    Escribir "Apartado de física"
+    Escribir "¿Qué desea hacer?"
+    Escribir "1- Modelo matemático"
+    Escribir "Presiona cualquier tecla para salir"
+	
+    Leer menuFis 
+	
+    Segun menuFis Hacer
+        Caso 1:
+            // Modelo Matemático
+            Escribir "Ingrese las unidades de la variable dependiente: "
+            Leer vd1
+			
+            Escribir "Ingrese las unidades de la variable independiente: "
+            Leer vi1
+			
+            Escribir "Ingrese los valores iniciales de la variable independiente y dependiente (x1 y1): "
+            Leer x1, y1
+			
+            Escribir "Ingrese los valores finales de la variable independiente y dependiente (x2 y2): "
+            Leer x2, y2
+			
+            pendiente <- (y2 - y1) / (x2 - x1)
+            x3 <- -1 * x1
+            pvalor <- pendiente * x3
+            pvalor <- pvalor + y1
+			
+            Escribir "El modelo matemático es el siguiente:"
+            Escribir "Formula: y = mx + b"
+            Si pvalor < 0 Entonces
+                Escribir "y [", vd1, "] = ", pendiente, " [", vd1, "/", vi1, "] x [", vi1, "] ", pvalor, " [", vd1, "]"
+            Sino
+                Escribir "y [", vd1, "] = ", pendiente, " [", vd1, "/", vi1, "] x [", vi1, "] + ", pvalor, " [", vd1, "]"
+            Fin Si
+        Fin Caso
+		
+	De Otro Modo:
+		Escribir "\n"
+Fin Segun
+Fin SubProceso
+
+SubProceso funcionQuimica()
+	Definir opcion, opcion1e, opcionPVNRT Como Entero
+    Definir masa, volumen, densi, mol, molaridad, porMV, resultadoPV Como Real
+    Definir vd1, vi1 Como Caracter
+    Definir x1, y1, x2, y2, pendiente, pvalor, x3 Como Real
+    Definir pvnrt Como Real[4]
+	
+    Escribir "Apartado de química"
+    Escribir "¿Qué desea hacer?"
+    Escribir "1- Estequiometría"
+    Escribir "2- Modelo Matemático"
+    Escribir "Presiona cualquier tecla para salir"
+	
+    Leer opcion
+	
+    Segun opcion Hacer
+        Caso 1:
+            Escribir "¿Qué desea hacer?"
+            Escribir "1- Densidad"
+            Escribir "2- Molaridad"
+            Escribir "3- Porcentaje masa/volumen"
+            Escribir "4- Ecuacion de gases ideales"
+            Escribir "Presiona cualquier tecla para salir"
+			
+            Leer opcion1e
+			
+            Segun opcion1e Hacer
+                Caso 1:
+                    // Densidad
+                    Escribir "masa de la sustancia [g]"
+                    Leer masa
+                    Escribir "volumen de la sustancia [ml]"
+                    Leer volumen
+                    densi <- masa / volumen
+                    Escribir "La densidad es de: ", densi, " [g/ml]"
+                Fin Caso
+				
+			Caso 2:
+				// Molaridad
+				Escribir "moles del soluto [mol]"
+				Leer mol
+				Escribir "volumen de la disolucion [L]"
+				Leer volumen
+				molaridad <- mol / volumen
+				Escribir "La molaridad es de: ", molaridad, " [M]"
+			Fin Caso
+			
+		Caso 3:
+			// %m/v
+			Escribir "gramos del soluto [g]"
+			Leer mol
+			Escribir "volumen de la disolucion [mL]"
+			Leer volumen
+			porMV <- (mol / volumen) * 100
+			Escribir "El Porcentaje masa/volumen es de: ", porMV
+		Fin Caso
+		
+	Caso 4:
+		Escribir "Ecuacion de gases idelaes (PV = nRT): que desea obtener"
+		Escribir "1- Presion [atm]"
+		Escribir "2- Volumen [L]"
+		Escribir "3- Moles [mol]"
+		Escribir "4- Temperatura [°K]"
+		
+		Leer opcionPVNRT
+		
+		Segun opcionPVNRT Hacer
+			Caso 1:
+				// Presion P = nRT / V
+				Escribir "Numeros de moles [mol]: "
+				Leer pvnrt[1]
+				Escribir "Temperatura [K]: "
+				Leer pvnrt[2]
+				Escribir "Volumen [L]: "
+				Leer pvnrt[3]
+				pvnrt[0] <- (pvnrt[1] * 0.082 * pvnrt[2]) / pvnrt[3]
+				Si pvnrt[0] < 0 Entonces
+					Escribir "Datos invalidos"
+				Sino
+					Escribir "La presion es de: ", pvnrt[0], "[L]"
+				Fin Si
+			Fin Caso
+			
+		Caso 2:
+			// Volumen V = nRT / P
+			Escribir "Numeros de moles [mol]: "
+			Leer pvnrt[1]
+			Escribir "Temperatura [K]: "
+			Leer pvnrt[2]
+			Escribir "Presion [atm]: "
+			Leer pvnrt[3]
+			pvnrt[0] <- (pvnrt[1] * 0.082 * pvnrt[2]) / pvnrt[3]
+			Si pvnrt[0] < 0 Entonces
+				Escribir "Datos invalidos"
+			Sino
+				Escribir "El volumen es de: ", pvnrt[0], "[L]"
+			Fin Si
+		Fin Caso
+		
+	Caso 3:
+		// Numeros de moles PV/RT = n
+		Escribir "Volumen [L]: "
+		Leer pvnrt[1]
+		Escribir "Temperatura [K]: "
+		Leer pvnrt[2]
+		Escribir "Presion [atm]: "
+		Leer pvnrt[3]
+		pvnrt[0] <- (pvnrt[2] * pvnrt[3]) / (0.082 * pvnrt[2])
+		Si pvnrt[0] < 0 Entonces
+			Escribir "Datos invalidos"
+		Sino
+			Escribir "Los numeros de moles son: ", pvnrt[0], "[mol]"
+		Fin Si
+	Fin Caso
+	
+Caso 4:
+	// Temperatura PV/Rn = T
+	Escribir "Volumen [L]: "
+	Leer pvnrt[1]
+	Escribir "Numeros de moles [mol]: "
+	Leer pvnrt[2]
+	Escribir "Presion [atm]: "
+	Leer pvnrt[3]
+	pvnrt[0] <- (pvnrt[3] * pvnrt[1]) / (0.082 * pvnrt[2])
+	Si pvnrt[0] < 0 Entonces
+		Escribir "Datos invalidos"
+	Sino
+		Escribir "La temperatura es de: ", pvnrt[0], "[°K]"
+	Fin Si
+Fin Caso
+
+De Otro Modo:
+	Escribir "\n"
+Fin Segun
+Fin Caso
+
+De Otro Modo:
+	Escribir "\n"
+Fin Segun
+Fin Caso
+
+Caso 2:
+	// Modelo Matemático
+	Escribir "Ingrese las unidades de la variable dependiente: "
+	Leer vd1
+	
+	Escribir "Ingrese las unidades de la variable independiente: "
+	Leer vi1
+	
+	Escribir "Ingrese los valores iniciales de la variable independiente y dependiente (x1 y1): "
+	Leer x1, y1
+	
+	Escribir "Ingrese los valores finales de la variable independiente y dependiente (x2 y2): "
+	Leer x2, y2
+	
+	pendiente <- (y2 - y1) / (x2 - x1)
+	x3 <- -1 * x1
+	pvalor <- pendiente * x3
+	pvalor <- pvalor + y1
+	
+	Escribir "El modelo matemático es el siguiente:"
+	Escribir "Formula: y = mx + b"
+	Si pvalor < 0 Entonces
+		Escribir "y [", vd1, "] = ", pendiente, " [", vd1, "/", vi1, "] x [", vi1, "] ", pvalor, " [", vd1, "]"
+	Sino
+		Escribir "y [", vd1, "] = ", pendiente, " [", vd1, "/", vi1, "] x [", vi1, "] + ", pvalor, " [", vd1, "]"
+	Fin Si
+Fin Caso
+
+De Otro Modo:
+	Escribir "\n"
+Fin Segun
+Fin SubProceso
+
+SubProceso funcionFdP()
+	// Menú de Fundamentos de Programación
+    Mostrar "== Fundamentos de Programación =="
+    Mostrar "1. Tipos de variables"
+    Mostrar "2. Uso de scanf y printf"
+    Mostrar "3. Crear un diagrama de flujo"
+    Mostrar "4. Sintaxis reservada de pseudocódigo"
+    Mostrar "Presiona cualquier número para salir"
+    
+    Leer opcion
+    
+    Segun opcion Hacer
+        Caso 1:
+            // Tipos de variables
+            Mostrar "== Tipos de Variables =="
+            Mostrar "En programación, los tipos de variables incluyen:"
+            Mostrar "- Enteros (int)"
+            Mostrar "- Flotantes (float)"
+            Mostrar "- Caracteres (char)"
+            Mostrar "- Booleanos (bool)"
+	Fin Segun
+	
+Caso 2:
+	// Uso de scanf y printf
+	Mostrar "== Uso de scanf y printf =="
+	Mostrar "scanf se utiliza para leer datos desde el usuario, y printf se utiliza para mostrar datos en la consola."
+	Mostrar "Ejemplo:"
+	Mostrar "int numero;"
+Mostrar "printf(\"Ingrese un numero: \");"
+	Mostrar "scanf(\"%d\", &numero);"
+Mostrar "printf(\"El numero ingresado es: %d\\n\", numero);"
+Fin Segun
+
+Caso 3:
+	// Crear un Diagrama de Flujo
+	Mostrar "== Crear un Diagrama de Flujo =="
+	Mostrar "Un diagrama de flujo es una representación visual de un proceso o algoritmo. Utiliza formas para representar diferentes pasos y decisiones."
+	Mostrar "Ejemplo:"
+	Mostrar "Inicio -> Proceso1 -> Decisión (Si/No) -> [Si] Proceso2 -> [No] Proceso3 -> Fin"
+	Mostrar "- Rectángulo: Inicio o fin del proceso."
+	Mostrar "- Paralelogramo: Entrada o lectura de datos."
+	Mostrar "- Rectángulo con bordes redondeados: Proceso o acción."
+	Mostrar "- Rombo: Decisión (Si/No) con flechas indicando los posibles caminos."
+	Mostrar "- Rectángulo con doble línea superior e inferior: Fin del programa."
+Fin Segun
+
+Caso 4:
+	// Sintaxis Reservada de Pseudocódigo
+	Mostrar "== Sintaxis Reservada de Pseudocódigo =="
+	Mostrar "En pseudocódigo, las sintaxis reservadas pueden incluir:"
+	Mostrar "- proceso"
+	Mostrar "- leer"
+	Mostrar "- escribir"
+	Mostrar "- si... sino..."
+	Mostrar "Ejemplo:"
+	Mostrar "proceso Principal"
+	Mostrar "    leer(num1)"
+	Mostrar "    leer(num2)"
+	Mostrar "    si num1 > num2 entonces"
+	Mostrar "        escribir(\"El primer numero es mayor\")"
+	Mostrar "    sino"
+	Mostrar "        escribir(\"El segundo numero es mayor\")"
+	Mostrar "    fin_si"
+	Mostrar "fin_proceso"
+Fin Segun
+De Otro Modo:
+	// Opción no válida
+	Mostrar "Opción no válida."
+Fin SubProceso
+
+SubProceso funcionIdG()
+	// Implementación de Igualdad de Género
+    Mostrar "== Igualdad de Género en Ingeniería =="
+    Mostrar "1. Tipos de Violencias"
+    Mostrar "2. Línea del Tiempo sobre Derechos de la Mujer"
+    Mostrar "3. Información para Crear una Denuncia Pública (México)"
+    Mostrar "4. Definiciones Importantes"
+    Mostrar "Seleccione una opción (1-4): "
+    
+    Leer opcion
+    
+    Segun opcion Hacer
+        Caso 1:
+            // Tipos de Violencias
+            Mostrar "== Tipos de Violencias =="
+            Mostrar "Algunos tipos de violencias de género incluyen:"
+            Mostrar "- Violencia física"
+            Mostrar "- Violencia verbal"
+            Mostrar "- Violencia psicológica"
+            Mostrar "- Violencia sexual"
+            Mostrar "- Violencia económica"
+	Fin Segun
+	
+Caso 2:
+	// Línea del Tiempo sobre Derechos de la Mujer
+	Mostrar "== Línea del Tiempo sobre Derechos de la Mujer =="
+	Mostrar "A lo largo de la historia, los derechos de la mujer han evolucionado:"
+	Mostrar "1. 1848 - La Declaración de Sentimientos en Seneca Falls marca el inicio del movimiento por los derechos de la mujer."
+	Mostrar "2. 1920 - Aprobación de la 19ª Enmienda en EE. UU., garantizando el derecho al voto de las mujeres."
+	Mostrar "3. Décadas de 1960 y 1970 - Movimiento feminista de la segunda ola."
+	Mostrar "4. 1979 - La Convención sobre la Eliminación de Todas las Formas de Discriminación contra la Mujer (CEDAW) de la ONU."
+Fin Segun
+
+Caso 3:
+	// Información para Crear una Denuncia Pública (México)
+	Mostrar "== Información para Crear una Denuncia Pública (México) =="
+	Mostrar "En caso de violencia de género, puedes presentar una denuncia:"
+	Mostrar "- Acude a la Fiscalía General de Justicia de tu estado."
+	Mostrar "- Utiliza el número de emergencia nacional: 911."
+	Mostrar "- Ponte en contacto con la Línea Nacional contra la Violencia de Género: 800 273 47 73."
+Fin Segun
+
+Caso 4:
+	// Definiciones Importantes
+	Mostrar "== Definiciones Importantes =="
+	Mostrar "- Masculinidades: Conjunto de características, roles y comportamientos asociados a los hombres en una sociedad."
+	Mostrar "- Violencia: Acción que causa daño físico o psicológico a una persona."
+	Mostrar "- Patriarcado: Sistema social en el que los hombres tienen un poder predominante."
+	Mostrar "- Igualdad: Principio de equiparación de derechos y oportunidades entre géneros."
+	Mostrar "- Construcción Sexual: Proceso social y cultural que define las identidades de género y roles."
+Fin Segun
+De Otro Modo:
+	// Opción no válida
+            Mostrar "Opción no válida."
+Fin SubProceso
+
+Proceso sin_titulo
+    Definir menu, escape como Entero
+    Definir archivo como Puntero a Archivo
+    Definir texto como Cadena de Caracteres
+	
+    Repetir
+        Escribir "== Hola usuario, bienvenido al programa: Ayuda en mi primer semestre =="
+        Escribir "Escribe el número de la materia en la que te podemos ayudar:"
+        Escribir "1- Álgebra"
+        Escribir "2- Cálculo y Geometría Analítica"
+        Escribir "3- Física"
+        Escribir "4- Química"
+        Escribir "5- Fundamentos de Programación"
+        Escribir "6- Igualdad de género"
+        
+        Leer menu
+		
+        Segun menu Hacer
+            Caso 1:
+                funcionAlgebra()
+            Caso 2:
+                funcionCyG()
+            Caso 3:
+                funcionFisica()
+            Caso 4:
+                funcionQuimica()
+            Caso 5:
+                funcionFdP()
+            Caso 6:
+                funcionIdG()
+            De Otro Modo:
+                Escribir "Opción no válida."
+        Fin Segun
+		
+        Escribir "Desea salir del programa"
+        Escribir "Si=s\t No=n\t"
+        Leer escape
+
+		Hasta Que escape = 'n'
+			
+			// Sección de comentarios
+			Escribir "==Creditos :D=="
+			Escribir "Muchas gracias por usar mi programa"
+			Escribir "Creado por Rodrigo Imanol Casas Perez"
+			Escribir "Proyecto Fundamentos de programacion"
+			Escribir "Profesor: Ernesto Alcantara Concepsion"
+			Escribir "==Datos Random=="
+			Escribir "El programa uso más de 600 líneas"
+			Escribir "Se utilizó todo lo aprendido en clase"
+			
+			Escribir "Desea dejar un comentario?:"
+			Escribir "Si=s\t No=n\t"
+			Leer escape
+			
+			Si escape = 's' Entonces
+				archivo <- AbrirArchivo("documento.txt", "a") // Cambiado a modo "a" para agregar al final
+				
+				Si archivo = NULL Entonces
+					Escribir "No se pudo abrir el archivo."
+					Devolver 1
+				Fin Si
+				
+				Leer comentario
+				EscribirEnArchivo(archivo, comentario)
+				CerrarArchivo(archivo)
+				Escribir "Comentario escrito en el archivo correctamente."
+			Fin Si
+			
+			// Leer comentarios al final del programa si el usuario lo desea
+			Escribir "Desea leer los comentarios almacenados?"
+			Escribir "Si=s\t No=n\t"
+			Leer escape
+			
+			Si escape = 's' Entonces
+				archivo <- AbrirArchivo("documento.txt", "r")
+				
+				Si archivo <> NULL Entonces
+					Escribir "\n== Comentarios almacenados ==\n"
+					
+					Mientras NoFinDeArchivo(archivo)
+						LeerDesdeArchivo(archivo, texto)
+						Escribir texto
+					Fin Mientras
+					
+					CerrarArchivo(archivo)
+				Sino
+					Escribir "No se pudo abrir el archivo para leer los comentarios."
+				Fin Si
+    Fin Si
+
+FinProceso
